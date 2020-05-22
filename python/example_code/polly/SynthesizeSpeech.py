@@ -28,6 +28,6 @@ polly_client = boto3.client('polly')
 response = polly_client.synthesize_speech(VoiceId='Joanna',
                                           OutputFormat='mp3',
                                           Text='This is sample text to synthesize.')
-with open('speech.mp3', 'w') as file:
+with open('speech.mp3', 'wb') as file:
     file.write(response['AudioStream'].read())
 # snippet-end:[polly.python.SynthesizeSpeech.complete]
